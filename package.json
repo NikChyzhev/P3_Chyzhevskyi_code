@@ -1,0 +1,13 @@
+{
+  "name": "p3_chyzhevskyi_code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./sass/main.scss:./css/main.css ./sass/menu.scss:./css/menu.css -w --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "author": "MChyzhev",
+  "license": "ISC",
+  "browserslist": "last 4 versions"
+}

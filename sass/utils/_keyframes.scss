@@ -1,0 +1,36 @@
+// like btn 
+@keyframes likebtn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Entrance animation
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+// Checkbox 
+@keyframes dishAdded {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 17%;
+    }
+}

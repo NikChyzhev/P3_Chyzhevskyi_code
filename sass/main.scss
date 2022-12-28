@@ -1,0 +1,315 @@
+@import "./utils/variables";
+@import "./utils/keyframes";
+@import "./utils/mixins";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+// Header
+.header {    
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 22px 0 13px 0;
+    @include header-logo;
+    box-shadow: 0 4px 4px rgba(100, 100, 111, 0.26);
+    padding: 15px 0;
+    margin: 0 0 4px 0;
+
+    
+    @include tablet {
+        max-height: 10vh;
+
+        @include header-logo {
+            width: 30%;
+        }
+    }
+
+    @include desktop {
+        max-height: 12vh;
+        padding: 20px 0 10px 0;
+
+        @include header-logo {
+            width: 25%;            
+        }
+    }    
+}
+
+// After head
+.main {
+    background-color: $light-gray;
+    height: 340px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    &__place {        
+        background-color: $dark-gray;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+
+        i {
+            margin-right: 15px;
+        }
+    }
+
+    &__heading {
+        margin: 40px 0;
+
+        @include desktop {
+            margin: 50px 0 40px 0;
+            font-size: 28px;
+        }
+    }
+
+    &__txt {        
+        margin: 0 0 30px 0;
+        font-size: 18px;
+        font-weight: 300;
+        width: 80%;
+        text-align: center;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    @include btn;
+    transition-duration: 400ms;
+    cursor: pointer;
+
+    @include btn--hover;
+}
+
+// Steps
+.steps {    
+    height: 450px;
+    padding: 50px 20px 50px 25px;
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include tablet {
+        align-items: center;
+        width: 100vw;
+    }
+
+    @include desktop {
+        height: 38vh;
+
+        .steps__wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            width: 95vw;
+            justify-content: space-evenly;
+        }
+    }
+    
+    &__heading {
+        margin-bottom: 27px;
+        
+        @include tablet {
+            align-self: start;
+        }
+
+        @include desktop {
+            width: 100%;
+            height: 30px;
+        }
+    }
+}
+
+.step {
+    background-color: $light-gray;
+    margin-bottom: 28px;
+    margin-left: 10px;
+    padding: 27px;
+    border-radius: 23px;
+    font-weight: 500;
+    @include boxshadow($box-shadow--dark);
+    transition-duration: 400ms;
+
+    &--number {
+        background-color: $primary-colour;
+        border-radius: 100%;
+        padding: 4px 8px;
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+        position: relative;
+        right: 40px;
+    }
+    
+    i {
+        color: #767676;
+        font-size: 20px;
+        position: relative;
+        right: 14px;
+        top: 2px;
+        margin-right: 13px;
+    }
+
+    &:hover {
+        background-color: lighten($primary-colour, 35%);
+
+        & .fas {
+            color: $primary-colour;
+        }
+    }
+    
+    @include tablet {
+        width: 70vw;
+    }
+
+    @include desktop {
+        width: 27vw;
+    }
+}
+
+// Restaurants
+.restaurants {
+    background-color: $light-gray;
+    padding: 50px 20px 35px 20px;
+
+    &__heading {
+        margin-bottom: 23px;
+
+        
+    }
+
+    &__cards {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 0;
+
+        @include tablet {
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+    }
+}
+
+.card {
+    background-color: white;
+    margin-bottom: 28px;
+    border-radius: 15px;
+    list-style: none;
+    width: 100%;
+    height: 255px;
+    @include boxshadow;
+    transform: scale(1);
+
+    
+    @include desktop {
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 2px 8px 18px 0px $box-shadow--dark;
+        }
+    }
+
+    @include tablet {
+        width: 45%;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 70%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    &__title {
+        margin: 10px 0 5px 12px;
+        width: 70%;
+    }
+
+    &__info {
+        margin: 0 0 10px 12px;
+        font-weight: 300;
+        font-size: 17px;
+        width: 50%;
+    }
+}
+
+// Like btn 
+.heart {
+    position: absolute;
+    right: 6%;
+    bottom: 25px;
+    display: flex;
+    flex-flow: column;
+    font-size: 24px;
+    cursor: pointer;
+    height: 33px;
+    background-color: transparent;
+    width: 40px;
+    border: none;
+
+    .far {
+        display: inline-block;
+        color: black;
+    }
+
+    .fas {
+        position: relative;        
+        bottom: 24px;
+        font-size: 24.4px;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(to top right, $secondary-colour, $primary-colour);
+        transform: scale(0);
+        transform-origin: 50% 35%;
+    }
+
+    &:hover {
+        .fas {
+            transform: scale(1);
+            animation: likebtn 500ms;
+        }
+    }
+
+    &:active {
+        .fas {
+            transform: scale(1);
+            animation: likebtn 500ms;
+        }
+    }
+}
+
+// Green label 
+.new {
+    color: darken($tertiary-colour, 40%);
+    background-color: $tertiary-colour;
+    width: 80px;
+    text-align: center;
+    position: absolute;
+    bottom: 215px;
+    right: 3%;
+    padding: 5px 0;
+    border-radius: 3px;
+}
+
+// Footer
+@include footer;
