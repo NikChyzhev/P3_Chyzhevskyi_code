@@ -273,10 +273,8 @@ a {
     .fas {
         position: relative;        
         bottom: 24px;
-        font-size: 24.4px;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        -webkit-background-clip: text;
+        font-size: 24.4px;        
+        color: transparent;       
         background-clip: text;
         background-image: linear-gradient(to top right, $secondary-colour, $primary-colour);
         transform: scale(0);
@@ -284,13 +282,6 @@ a {
     }
 
     &:hover {
-        .fas {
-            transform: scale(1);
-            animation: likebtn 500ms;
-        }
-    }
-
-    &:active {
         .fas {
             transform: scale(1);
             animation: likebtn 500ms;

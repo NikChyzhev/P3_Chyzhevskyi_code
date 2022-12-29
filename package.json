@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/main.scss:./css/main.css ./sass/menu.scss:./css/menu.css -w --style compressed",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+    "sass": "sass ./sass/main.scss:./css/main.css ./sass/menu.scss:./css/menu.css -w",
+    "prefix": "postcss ./css/main.css ./css/menu.css --use autoprefixer -d ./css/prefixed/"
   },
   "author": "MChyzhev",
   "license": "ISC",
