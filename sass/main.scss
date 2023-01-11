@@ -16,6 +16,51 @@ h2 {
     font-size: 20px;
 }
 
+//Loader
+.loader {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    position: fixed;
+    height: 102vh;
+    width: 100vw;
+    z-index: 2;    
+    background: rgb(225, 225, 225);
+    animation: load-page 0.1s 2.9s linear forwards; 
+
+    & > span {
+        font-size: 2rem;
+    }
+    .load {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 16px solid rgb(225, 225, 225);
+        border-top: 16px solid $primary-colour;;
+        animation: spinner 3s linear infinite;
+
+    }
+        
+    // .load {
+    //     width: $size*10;
+    //     height: $size*7.5;
+    //     display: flex;
+    //     justify-content: space-evenly;
+    //     &__bar {
+    //         background-color: $cd-bars;
+    //         width: $size;
+    //         animation: bars $anim-dur backwards infinite ease-in-out alternate;
+
+    //         @for $i from 1 through 5 {
+    //             &--#{$i} {
+    //                 animation-delay: $anim-delay * $i;                    
+    //             }
+    //         }
+    //     }
+    // }
+}
+
 // Header
 .header {    
     display: flex;
@@ -286,7 +331,13 @@ a {
             transform: scale(1);
             animation: likebtn 500ms;
         }
-    }
+    }    
+        &:active {
+            .fas {
+                transform: scale(1);
+                animation: likebtn 500ms;
+            }
+        }
 }
 
 // Green label 

@@ -11,4 +11,9 @@ $box-shadow--light: rgba(100, 100, 110, 0.25);
 $breakpoints: (    
     tablet: 768px,
     desktop: 992px
-)
+);
+
+$cd-bars: $tertiary-colour;
+$size: 3vh;
+$anim-dur: 800ms;
+$anim-delay: calc($anim-dur / 5);

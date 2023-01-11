@@ -183,9 +183,7 @@ a {
         }
 
         //  animations effect
-        animation: drop 2s;
-        animation-delay: .5s;
-        animation-fill-mode: both;
+        animation: drop 2s .5s both;        
 
         &:hover {
             .card__description {
@@ -207,14 +205,10 @@ a {
 
             .checkbox {
                 display: flex;
-                animation-name: dishAdded;
-                animation-duration: 0.4s;
-                animation-timing-function: linear;
-                animation-delay: 0s;
-                animation-fill-mode: forwards;
+                animation: dishAdded 0.4s linear both;                
 
                 i {
-                    animation: .3s linear 0s;
+                    animation: rotateMe .4s linear 0s;
                 }
             }
         }
@@ -260,10 +254,8 @@ a {
             left: 90%;
             bottom: 24px;
             display: inline-block;
-
             transform: translateX(0);
-            transition-duration: 500ms;           
-            
+            transition: transform 500ms; 
         }
     }
 }

@@ -1,3 +1,29 @@
+@keyframes load-page {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes likebtn {
   from {
     transform: scale(0);
@@ -26,6 +52,14 @@
     width: 17%;
   }
 }
+@keyframes rotateMe {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -38,6 +72,30 @@ h1 {
 
 h2 {
   font-size: 20px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  position: fixed;
+  height: 102vh;
+  width: 100vw;
+  z-index: 2;
+  background: rgb(225, 225, 225);
+  animation: load-page 0.1s 2.9s linear forwards;
+}
+.loader > span {
+  font-size: 2rem;
+}
+.loader .load {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 16px solid rgb(225, 225, 225);
+  border-top: 16px solid #9356DC;
+  animation: spinner 3s linear infinite;
 }
 
 .header {
@@ -298,6 +356,10 @@ a {
   transform-origin: 50% 35%;
 }
 .heart:hover .fas {
+  transform: scale(1);
+  animation: likebtn 500ms;
+}
+.heart:active .fas {
   transform: scale(1);
   animation: likebtn 500ms;
 }
